@@ -1,0 +1,356 @@
+/* ===== Fontes (as mesmas do dashboard) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/clear-sans');
+
+/* ===== Layout geral ===== */
+.paginaCompleta {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f4f6f9;
+    font-family: 'Clear Sans', sans-serif;
+}
+
+.paginaCompleta button,
+.paginaCompleta select {
+    font-family: 'Clear Sans', sans-serif;
+}
+
+.layoutPagina {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.menuLateralContainer {
+    width: 260px;
+    flex-shrink: 0;
+    transition: width 0.25s ease;
+}
+
+.menuLateralColapsado {
+    width: 80px;
+}
+
+.conteudoPrincipal {
+    flex: 1;
+    min-width: 0;
+    padding: 28px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ===== Topo ===== */
+.botaoVoltar {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #3b4a6b;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.botaoVoltar:hover {
+    text-decoration: underline;
+}
+
+.topoPagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.tituloPagina {
+    margin: 0;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    color: #1f2a44;
+}
+
+.subtituloPagina {
+    margin: 6px 0 0;
+    color: #6b7690;
+    font-size: 0.95rem;
+}
+
+.selectFiltro {
+    padding: 10px 14px;
+    border: 1px solid #d3d9e5;
+    border-radius: 8px;
+    background: #fff;
+    color: #1f2a44;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.selectFiltro:focus {
+    outline: 2px solid #3b6fd4;
+    outline-offset: 1px;
+}
+
+.mensagemErro {
+    background: #fdecea;
+    color: #b3261e;
+    border: 1px solid #f5c2be;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+}
+
+/* ===== Cards de indicadores ===== */
+.gridIndicadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.cardIndicador {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 1px 4px rgba(20, 30, 60, 0.08);
+}
+
+.labelIndicador {
+    font-size: 0.85rem;
+    color: #6b7690;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.valorIndicador {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #1f2a44;
+}
+
+.corVerde {
+    color: #1e8e4e;
+}
+
+/* "A receber" em azul petróleo */
+.corLaranja {
+    color: #0047ab;
+}
+
+/* ===== Selo de saúde ===== */
+.selo {
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.saudeNeutra {
+    background: #e9ecf2;
+    color: #5a6479;
+}
+
+.saudeBoa {
+    background: #def5e7;
+    color: #1e8e4e;
+}
+
+.saudeAtencao {
+    background: #fff1d6;
+    color: #b87400;
+}
+
+.saudeCritica {
+    background: #fde0dd;
+    color: #b3261e;
+}
+
+/* ===== Seções ===== */
+.cardSecao {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 4px rgba(20, 30, 60, 0.08);
+}
+
+.tituloSecao {
+    margin: 0 0 18px;
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #1f2a44;
+}
+
+.gradeDupla {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.textoVazio {
+    margin: 0;
+    padding: 32px 0;
+    text-align: center;
+    color: #8a93a8;
+}
+
+/* ===== Barra de progresso ===== */
+.barraProgresso {
+    display: flex;
+    width: 100%;
+    height: 22px;
+    background: #e9ecf2;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progressoRecebido {
+    background: #1e8e4e;
+    transition: width 0.4s ease;
+}
+
+.progressoPendente {
+    background: #0047ab;
+    transition: width 0.4s ease;
+}
+
+.legendaProgresso {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #3b4a6b;
+}
+
+.pontoVerde,
+.pontoLaranja {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.pontoVerde {
+    background: #1e8e4e;
+}
+
+.pontoLaranja {
+    background: #0047ab;
+}
+
+/* ===== Gráfico de barras ===== */
+.graficoLegenda {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.legendaRecebido {
+    color: #1e8e4e;
+}
+
+.legendaAReceber {
+    color: #0047ab;
+}
+
+.graficoBarras {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    min-height: 230px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+    border-bottom: 1px solid #e3e7ef;
+}
+
+.barraGrupo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 48px;
+}
+
+.barras {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 180px;
+}
+
+.barraRecebido,
+.barraAReceber {
+    width: 18px;
+    min-height: 2px;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.4s ease;
+}
+
+.barraRecebido {
+    background: #1e8e4e;
+}
+
+.barraAReceber {
+    background: #0047ab;
+}
+
+.barraLabel {
+    font-size: 0.8rem;
+    color: #6b7690;
+    white-space: nowrap;
+}
+
+/* ===== Resumo ===== */
+.listaResumo {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.listaResumo li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eef0f5;
+}
+
+.listaResumo li:last-child {
+    border-bottom: none;
+}
+
+.listaResumo span {
+    font-size: 0.85rem;
+    color: #6b7690;
+}
+
+.listaResumo strong {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #1f2a44;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+    .gradeDupla {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudoPrincipal {
+        padding: 20px 16px 32px;
+    }
+}
